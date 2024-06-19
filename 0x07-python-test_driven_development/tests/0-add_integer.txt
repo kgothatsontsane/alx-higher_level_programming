@@ -43,26 +43,23 @@ The second argument is optional and it is initialised to 98 by default
 	>>> add_integer(2)
 	100
 
-=================
+===========
 NON-NUMBERS
-=================
+===========
 	
 
 A type error should be raised if a is a not a number
 ::
 	>>> add_integer(None)
 	Traceback (most recent call last):
-	...
 	TypeError: a must be an integer
 
 	>>> add_integer("ALX")
 	Traceback (most recent call last):
-	...
 	TypeError: a must be an integer
 
 	>>> add_integer("ALX", 5)
 	Traceback (most recent call last):
-	...
 	TypeError: a must be an integer	
 	
 
