@@ -63,8 +63,7 @@ A type error should be raised if a is a not a number
 	>>> add_integer("ALX", 5)
 	Traceback (most recent call last):
 		...
-	TypeError: a must be an integer	
-	
+	TypeError: a must be an integer
 
 A type error should be raised if b is a not a number
 ::
