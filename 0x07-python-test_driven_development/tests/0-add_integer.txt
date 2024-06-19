@@ -52,20 +52,23 @@ A type error should be raised if a is a not a number
 ::
 	>>> add_integer(None)
 	Traceback (most recent call last):
+		...
 	TypeError: a must be an integer
 
 	>>> add_integer("ALX")
 	Traceback (most recent call last):
+		...
 	TypeError: a must be an integer
 
 	>>> add_integer("ALX", 5)
 	Traceback (most recent call last):
+		...
 	TypeError: a must be an integer	
 	
 
 A type error should be raised if b is a not a number
-
+::
 	>>> add_integer(4, "ALX")
 	Traceback (most recent call last):
-	...
+		...
 	TypeError: b must be an integer
