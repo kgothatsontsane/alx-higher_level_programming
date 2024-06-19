@@ -71,3 +71,24 @@ A type error should be raised if b is a not a number
 	Traceback (most recent call last):
 		...
 	TypeError: b must be an integer
+
+A type error should be raised if there is an overflow
+
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    	      ...
+    OverflowError: cannot convert float infinity to integer
+
+A type error should be raised if there is an overflow
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    	      ...
+    OverflowError: cannot convert float infinity to integer
+
+A type error should be raised if convertomg a float NaN to integer
+
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    	      ...
+    ValueError: cannot convert float NaN to integer
