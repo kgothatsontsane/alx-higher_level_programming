@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 """
-This function writes a string to a text file (UTF8) 
+This function writes a string to a text file (UTF8)
 and returns the number of characters written.
 """
 
 
 def write_file(filename="", text=""):
     """
-    Writes a string to a text file (UTF8) and returns 
+    Writes a string to a text file (UTF8) and returns
     the number of characters written.
 
     This function opens a file in write mode with UTF-8 encoding,
-    writes the provided text to the file, and returns 
+    writes the provided text to the file, and returns
     the number of characters written. If the file does not exist,
     it will be created. If the file already exists,
     its content will be overwritten.
