@@ -1,3 +1,4 @@
+# Ignore these files
 __pycache__/
 file_append.txt
 my_file_0.txt
