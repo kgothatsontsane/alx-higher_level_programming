@@ -5,14 +5,7 @@ represent a student with attributes for first name, last name,
 and age. 
 
 It also includes methods for initializing a student object and
-converting the object to a JSON-serializable dictionary.
-
-Classes:
---------
-Student
-    A class used to represent a Student with attributes for first
-    name, last name, and age, and methods for initialization 
-    and JSON serialization.
+converting it to a JSON-serializable dictionary.
 """
 
 
@@ -66,3 +59,15 @@ class Student(object):
         else:
             return ({key: self.__dict__[key] for key
                     in attrs if key in self.__dict__})
+
+    def reload_from_json(self, json):
+        """
+        Replaces all attributes of the Student instance with the values
+        from the provided dictionary.
+
+        Args:
+            json (dict): A dictionary containing the new values for the
+            attributes.
+        """
+        for key, value in json.items():
+            setattr(self, key, value)
