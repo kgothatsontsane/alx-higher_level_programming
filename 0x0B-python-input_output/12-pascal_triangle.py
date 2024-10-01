@@ -1,12 +1,20 @@
 #!/usr/bin/python3
 """
-12-main
+This module contains a function to generate Pascal's triangle.
+
+The function `pascal_triangle(n)` returns a list of lists of
+integers representing the Pascal`s triangle of a given integer `n`.
+
+Example:
+    >>> pascal_triangle(5)
+    [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
 """
 
 
 def pascal_triangle(n):
     """
-    Returns a list of lists of integers representing the Pascal’s triangle of n
+    Returns a list of lists of integers representing the Pascal`s
+    triangle of n
     """
     if n <= 0:
         return []
