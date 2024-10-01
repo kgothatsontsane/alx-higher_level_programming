@@ -37,15 +37,21 @@ class Student(object):
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """
-        Returns the dictionary description with simple data structure
-        for JSON serialization of an object.
+        The function `to_json` converts object attributes to a dictionary,
+        optionally filtering based on specified attributes.
 
         Args:
-            obj (object): An instance of a class.
+            attrs (list): A list of attributes to include in the JSON
+            representation.If `None`, all attributes are included.
 
         Returns:
-            dict: A dictionary containing all attributes of the obj class.
+            dict: A dictionary containing the specified attributes of
+            the object. If `attrs` is `None`, all attributes are included.
         """
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
+        else:
+            return ({key: self.__dict__[key] for key
+                    in attrs if key in self.__dict__})
