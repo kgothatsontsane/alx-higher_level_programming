@@ -4,6 +4,7 @@ This module contains a script that reads from standard input and computes
 metrics.
 """
 import sys
+import contextlib
 
 
 def print_stats(total_size, status_codes):
@@ -24,15 +25,12 @@ try:
     for line in sys.stdin:
         parts = line.split()
         if len(parts) > 6:
-            try:
+            with contextlib.suppress(ValueError, IndexError):
                 status_code = int(parts[-2])
                 file_size = int(parts[-1])
                 total_size += file_size
                 if status_code in status_codes:
                     status_codes[status_code] += 1
-            except (ValueError, IndexError):
-                pass
-        line_count += 1
 
         if line_count % 10 == 0:
             print_stats(total_size, status_codes)
@@ -40,5 +38,3 @@ try:
 except KeyboardInterrupt:
     print_stats(total_size, status_codes)
     raise
-
-print_stats(total_size, status_codes)
