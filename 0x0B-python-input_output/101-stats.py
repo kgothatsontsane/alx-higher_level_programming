@@ -24,15 +24,18 @@ try:
     for line in sys.stdin:
         parts = line.split()
         if len(parts) > 6:
-            status_code = int(parts[-2])
-            file_size = int(parts[-1])
-            total_size += file_size
-            if status_code in status_codes:
-                status_codes[status_code] += 1
-            line_count += 1
+            try:
+                status_code = int(parts[-2])
+                file_size = int(parts[-1])
+                total_size += file_size
+                if status_code in status_codes:
+                    status_codes[status_code] += 1
+                line_count += 1
 
-            if line_count % 10 == 0:
-                print_stats(total_size, status_codes)
+                if line_count % 10 == 0:
+                    print_stats(total_size, status_codes)
+            except ValueError:
+                continue
 
 except KeyboardInterrupt:
     print_stats(total_size, status_codes)
