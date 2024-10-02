@@ -34,7 +34,7 @@ try:
 
                 if line_count % 10 == 0:
                     print_stats(total_size, status_codes)
-            except ValueError:
+            except (ValueError, IndexError):
                 continue
 
 except KeyboardInterrupt:
