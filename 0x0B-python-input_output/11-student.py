@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-This module defines the Student class, which is used to 
+This module defines the Student class, which is used to
 represent a student with attributes for first name, last name,
-and age. 
+and age.
 
 It also includes methods for initializing a student object and
 converting it to a JSON-serializable dictionary.
